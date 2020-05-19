@@ -53,8 +53,8 @@
                 </ul>
             </div>
         </main>
-        <?php include_once("_incluir/rodape.php"); ?>
     </body>
+    <?php include_once("_incluir/rodape.php"); ?>
 </html>
 
 <?php
