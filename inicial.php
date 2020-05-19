@@ -49,7 +49,7 @@
                         <img src="<?php echo $linha["imagempequena"]?>"></li>
                         <li><h3><?php echo $linha["nomeproduto"]?></h3></li>
                         <li>Tempo de Entrega: <?php echo $linha["tempoentrega"]?></li>
-                        <li>Preço Unitário: R$ <?php echo $linha["precounitario"] ?></li>
+                        <li>Preço Unitário: R$ <?php echo $linha["precounitario"] ?></li></a>
                     </ul>
                 <?php
                     }
