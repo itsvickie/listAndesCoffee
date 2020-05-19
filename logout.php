@@ -1,7 +1,5 @@
 <?php
     session_start();
-
-    unset($_SESSION["usuario"]);
-
-    session_destroy();
+    unset($_SESSION["user_portal"]);
+    header("location:login.php");
 ?>
