@@ -20,6 +20,6 @@
         ?>
         <img src="assets/logo_andes.gif">
         <img src="assets/text_bnwcoffee.gif">
-        <div id="header_saudacao"><h5>Bem vindo, <?php echo $nome ?> - <a href="logout.php">Sair</h5></div></a>
+        <!-- <div id="header_saudacao"><h5>Bem vindo, <?php echo $nome ?> - <a href="logout.php">Sair</h5></div></a> -->
     </div>
 </header>
