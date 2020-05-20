@@ -1,7 +1,6 @@
-<?php require_once("./conexao/conexao.php"); ?>
-
-<?php
-    //iniciar sessão
+<?php 
+    require_once("./conexao/conexao.php");
+    
     session_start();
 
     $_SESSION["usuario"] = "Gabriel";

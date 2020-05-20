@@ -1,6 +1,6 @@
-<?php require_once("./conexao/conexao.php"); ?>
+<?php 
+    require_once("./conexao/conexao.php");
 
-<?php
     session_start();
 
     if (!isset($_SESSION["user_portal"])){

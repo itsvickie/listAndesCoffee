@@ -1,6 +1,6 @@
-<?php require_once("./conexao/conexao.php"); ?>
-
-<?php
+<?php 
+    require_once("./conexao/conexao.php");
+    
     if(isset($_POST["nometransportadora"])){
         $nome = $_POST["nometransportadora"];
         $endereco = $_POST["endereco"];
