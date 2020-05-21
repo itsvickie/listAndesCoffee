@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once("./conexao/conexao.php"); 
 
     $tr = "SELECT * FROM transportadoras ";
@@ -41,17 +41,20 @@
 
         <main>
             <div id="janela_formulario">
-                <form action="alteracao.php" method="post">
+                <form action="alteracao2.php" method="post">
                     <h2>Alteração de Transportadora</h2>
 
                     <label for="nometransportadora">Nome da Transportadora</label>
-                    <input type="text" value="<?php echo $info_transportadora['nometransportadora']?>" name="nometransportadora" id="nometransportadora">
+                    <input id="nometransportadora" type="text" value="<?php echo $info_transportadora['nometransportadora']?>" name="nometransportadora">
+                    
                     <label for="endereco">Endereço</label>
                     <input type="text" value="<?php echo $info_transportadora['endereco']; ?>" name="endereco" id="endereco">
+                    
                     <label for="cidade">Cidade</label>
                     <input type="text" value="<?php echo $info_transportadora['cidade']; ?>" name="cidade" id="cidade">
+                    
                     <label for="estado">Estado</label>
-                    <select id="estado">
+                    <select id="estado" name="estado">
                         <?php 
                             $estado = $info_transportadora["estadoID"];
                             while($linha = mysqli_fetch_assoc($lista_estados)){
@@ -75,8 +78,15 @@
                     </select>
                     <label for="cep">CEP</label>
                     <input type="text" value="<?php echo $info_transportadora["cep"]?>" name="cep" id="cep">
+                    
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" value="<?php echo $info_transportadora["cnpj"]?>" name="cnpj" id="cnpj">
+                    
                     <label for="telefone">Telefone</label>
                     <input type="text" value="<?php echo $info_transportadora['telefone']?>" name="telefone" id="telefone">
+
+                    <input type="hidden" value="<?php echo $info_transportadora['transportadoraID']?>" name="transportadoraID">
+                    
                     <input type="submit" value="Alterar">  
                 </form>
             </div>
