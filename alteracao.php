@@ -2,8 +2,7 @@
     require_once("./conexao/conexao.php"); 
 
     $tr = "SELECT * FROM transportadoras ";
-    $lista_estados = "SELECT estadoID, nome FROM estados";
-
+    
     if (isset($_GET["codigo"])){
         $id = $_GET["codigo"];
         $tr .= "WHERE transportadoraID = {$id}";
@@ -11,14 +10,20 @@
         header("location:listagemTransportadoras.php");
     }
 
-    $estados_query = mysqli_query($conecta, $lista_estados);
     $con_transportadora = mysqli_query($conecta, $tr);
 
     if(!$con_transportadora){
-        die("Erro ao consultar!");
+        die("Erro ao consultar as transportadoras!");
     }
 
     $info_transportadora = mysqli_fetch_assoc($con_transportadora);
+
+    $estados = "SELECT * FROM estados ";
+    $lista_estados = mysqli_query($conecta, $estados);
+
+    if (!$lista_estados){
+        die("Erro ao consultar os estados!");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,11 +53,24 @@
                     <label for="estado">Estado</label>
                     <select id="estado">
                         <?php 
-                            while ($estado = mysqli_fetch_assoc($estados_query)){
+                            $estado = $info_transportadora["estadoID"];
+                            while($linha = mysqli_fetch_assoc($lista_estados)){
+                                $estado_atual = $linha["estadoID"];
+                                if ($estado == $estado_atual){    
                         ?>
-                            <option value="<?php echo $estado["estadoID"]?>"> <?php echo $estado["nome"]?> </option>
-                        <?php
-                            }
+                            <option value="<?php echo $linha["estadoID"]?>" selected>
+                                <?php echo $linha["nome"] ?>
+                            </option>
+
+                        <?php 
+                                } else {
+                        ?>
+                            <option value="<?php echo $linha["estadoID"]?>">
+                                <?php echo $linha["nome"] ?>
+                            </option>
+                        <?php 
+                                }
+                            }                       
                         ?>
                     </select>
                     <label for="cep">CEP</label>

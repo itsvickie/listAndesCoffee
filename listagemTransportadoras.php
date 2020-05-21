@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Curso PHP INTEGRACAO</title>
+        <title>Transportadoras</title>
         
         <!-- estilo -->
         <link href="_css/estilo.css" rel="stylesheet">
