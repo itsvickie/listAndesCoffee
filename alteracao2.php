@@ -12,7 +12,7 @@
     $telefone = $_POST["telefone"];
 
     //Comando SQL Update Transportadoras
-    $update = "UPDATE transportadoras SET nometransportadora = '{$nome}', endereco = '{$endereco}', cidade = '{$cidade}', estadoID = '{$estado}', cep = '{$cep}', cnpj = '{$cnpj}', telefone = '{$telefone}' WHERE transportadoraID = '{$id}'";
+    $update = "UPDATE transportadoras SET nometransportadora = '{$nome}', endereco = '{$endereco}', cidade = '{$cidade}', estadoID = '{$estado}', cep = '{$cep}', cnpj = '{$cnpj}', telefone = '{$telefone}' WHERE transportadoraID = {$id}";
 
     //Atualizar BD
     $update_query = mysqli_query($conecta, $update); 
